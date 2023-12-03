@@ -34,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1700px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -46,11 +46,11 @@ body {
 
 .navlist {
   display: flex;
-  column-gap: 40px;
+  column-gap: 50px;
 }
 
 .navlink {
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
   transition: color 0.4s;
 }
