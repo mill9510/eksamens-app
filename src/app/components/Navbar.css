@@ -1,0 +1,70 @@
+/* Genstarter alt css til href og andet default css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Basale styles */
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-image: url("./imgs/forsideimg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  background-position: center center;
+}
+
+/* Normale styles */
+.header {
+  background-color: rgba(19, 22, 26, 0);
+}
+
+.headercontent {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.logoimg {
+  display: block;
+  height: 20px;
+}
+
+.navlist {
+  display: flex;
+  column-gap: 40px;
+}
+
+.navlink {
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: color 0.4s;
+}
+.navlink:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 650px) {
+  .headercontent {
+    flex-direction: column;
+    padding: 25px 0;
+    row-gap: 18px;
+  }
+  .navlist {
+    column-gap: 20px;
+  }
+}
