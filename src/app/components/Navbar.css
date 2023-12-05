@@ -20,7 +20,7 @@ body {
   background-image: url("./imgs/forsideimg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 100vh;
   background-position: center center;
 }
 

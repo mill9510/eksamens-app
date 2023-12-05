@@ -1,11 +1,10 @@
 import "./Forside.css";
 import Button from "./Button";
 
-function Forside() {
+function Forside(props) {
   return (
     <>
-      <h1 className="titel">FooFest</h1>
-      <Button />
+      <h1 className="titel">{props.titel}</h1>
     </>
   );
 }

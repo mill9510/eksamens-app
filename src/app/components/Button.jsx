@@ -1,15 +1,15 @@
+import Link from "next/link";
 import "./Button.css";
 
-function Button() {
+function Button(props) {
   return (
     <>
       {" "}
       <button type="button" className="btn button">
         {" "}
-        <a href="#">
-          {" "}
-          Buy your ticket now <span>&#10230;</span>
-        </a>
+        <Link href="/tickets">
+          {props.text} <span>&#10230;</span>
+        </Link>
       </button>{" "}
     </>
   );
