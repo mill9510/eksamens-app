@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./Navbar.css";
 import Image from "next/image";
 
@@ -12,24 +13,16 @@ function Navbar() {
           <nav className="nav">
             <ul className="navlist">
               <li className="navitem">
-                <a href="#" className="navlink">
-                  Lineup
-                </a>
+                <Link href="/">Home</Link>
               </li>
               <li className="navitem">
-                <a href="#" className="navlink">
-                  Tickets
-                </a>
+                <Link href="/tickets">Tickets</Link>
               </li>
               <li className="navitem">
-                <a href="#" className="navlink">
-                  Area Overview
-                </a>
+                <Link href="/overview">Area overview</Link>
               </li>
               <li className="navitem">
-                <a href="#" className="navlink">
-                  Program
-                </a>
+                <Link href="/program">Program</Link>
               </li>
             </ul>
           </nav>
