@@ -3,6 +3,7 @@ import BandCard from "../components/BandCard";
 import "../globals.css";
 import "./Program.css";
 import Navbar from "../components/Navbar";
+import ProgramCard from "../components/ProgramCard";
 
 export default async function Bands() {
   return (
@@ -14,6 +15,7 @@ export default async function Bands() {
         <h1>PROGRAM</h1>
         <section>
           <BandCard />
+          <ProgramCard />
         </section>
       </main>
     </>

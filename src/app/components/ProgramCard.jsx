@@ -1,5 +1,6 @@
 import Image from "next/image";
-import "./BandCard.css";
+import "./ProgramCard.css";
+import Link from "next/link";
 
 export default async function BandCard() {
   const res = await fetch("http://localhost:8080/bands");
@@ -16,9 +17,8 @@ export default async function BandCard() {
             <img src={band.logo} alt="" />
             <section>
               <h2>{band.name}</h2>
-              <h3>{band.members}</h3>
               <h4>MUSIC GENRE {band.genre}</h4>
-              <p>{band.bio}</p>
+              <Link href={`./bands/${band.slug}`}>READ MORE ABOUT {band.name}</Link>
             </section>
           </article>
         );
