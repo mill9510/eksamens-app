@@ -6,11 +6,16 @@ import Navbar from "../components/Navbar";
 
 export default async function Bands() {
   return (
-    <main>
-      <Navbar />
-      <section>
-        <BandCard />
-      </section>
-    </main>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <h1>PROGRAM</h1>
+        <section>
+          <BandCard />
+        </section>
+      </main>
+    </>
   );
 }

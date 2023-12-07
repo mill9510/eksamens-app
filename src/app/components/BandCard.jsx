@@ -12,9 +12,9 @@ export default async function BandCard() {
       {data.map((band) => {
         return (
           <article key={slug}>
-            <h1>{band.name}</h1>
-            <h2>{band.members}</h2>
-            <h3>THEY PLAY {band.genre}</h3>
+            <h2>{band.name}</h2>
+            <h3>{band.members}</h3>
+            <h4>THEY PLAY {band.genre}</h4>
             <p>{band.bio}</p>
           </article>
         );
