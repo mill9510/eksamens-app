@@ -16,7 +16,6 @@ function Forside(props) {
       </h2>
       <br />
       <ProgramButton />
-      <Galleri />
     </>
   );
 }
