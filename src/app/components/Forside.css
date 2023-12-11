@@ -10,5 +10,16 @@
 }
 
 .invis {
-  height: 26rem;
+  height: 40rem;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15rem;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: white;
 }
