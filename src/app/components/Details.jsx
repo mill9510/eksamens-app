@@ -45,6 +45,8 @@ import styles from "../components/details.css";
 import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
 
+//EN MASSE FUCKING HJÆLP FRA NETTET, HVORFOR SKAL REQUESTES VÆRE SÅDAN DER??
+
 export default function Details() {
   const dispatch = useContext(BasketUpdaterContext);
   const [selectedArea, setSelectedArea] = useState(null);
@@ -61,7 +63,7 @@ export default function Details() {
       const res = await fetch("http://localhost:8080/available-spots");
       const data = await res.json();
 
-      console.log("Fetched data:", data); // Log the entire data object
+      console.log("Fetched data:", data); // vis dataen
 
       if (Array.isArray(data)) {
         setAreas(data.map((area) => area.area));
@@ -95,15 +97,35 @@ export default function Details() {
 
       if (response.ok) {
         console.log("Reservation successful");
-        dis;
-        // You may want to handle the response further if needed
+        const reservationData = await response.json(); // venter på at få id'et tilbage
+        const { id } = reservationData; // destrukturerer id'et
+        await fulfillReservation(id); // kalder fulfillReservation med id'et
+        console.log(reservationData); // viser id'et
       } else {
         console.error("Reservation failed");
-        // Handle the failure, maybe show an error message to the user
       }
     } catch (error) {
       console.error("Error during reservation:", error);
-      // Handle the error, maybe show an error message to the user
+    }
+  };
+
+  const fulfillReservation = async (reservationId) => {
+    try {
+      const fulfillResponse = await fetch("http://localhost:8080/fullfill-reservation", {
+        method: "POST",
+        body: JSON.stringify({ id: reservationId }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (fulfillResponse.ok) {
+        console.log("Reservation fulfilled");
+      } else {
+        console.error("Fulfillment failed");
+      }
+    } catch (error) {
+      console.error("Error during fulfillment:", error);
     }
   };
 
