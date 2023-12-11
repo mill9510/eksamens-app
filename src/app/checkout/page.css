@@ -1,0 +1,21 @@
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 8rem;
+  text-align: center;
+}
+
+.written {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+}
+
+p,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  color: white;
+}
