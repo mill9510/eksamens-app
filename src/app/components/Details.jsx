@@ -1,4 +1,8 @@
 "use client";
+import React, { useState, useEffect } from "react";
+import styles from "../components/details.css";
+import { useContext } from "react";
+import { BasketUpdaterContext } from "../contexts/basketContext";
 /* import React from "react";
 import styles from "../components/details.css";
 
@@ -39,11 +43,6 @@ export default async function Details() {
   );
 }
  */
-
-import React, { useState, useEffect } from "react";
-import styles from "../components/details.css";
-import { useContext } from "react";
-import { BasketUpdaterContext } from "../contexts/basketContext";
 
 //EN MASSE FUCKING HJÆLP FRA NETTET, HVORFOR SKAL REQUESTES VÆRE SÅDAN DER??
 
