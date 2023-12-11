@@ -11,8 +11,7 @@ hr {
 }
 .box1,
 .box2,
-.box3,
-.box4 {
+.box3 {
   flex: 25%;
   text-align: center;
   margin-top: 2.7rem;
