@@ -1,28 +1,42 @@
-import Image from "next/image";
-import "./ProgramCard.css";
-import Link from "next/link";
-
-export default async function BandCard() {
-  const res = await fetch("http://localhost:8080/bands");
+export default async function ProgramCard() {
+  const res = await fetch("http://localhost:8080/schedule");
   const data = await res.json();
-  const { name, members, genre, logoCredits, logo, bio, slug } = data;
 
   console.log(data);
 
+  const stages = Object.keys(data);
+
   return (
-    <>
-      {data.map((band) => {
-        return (
-          <article key={slug}>
-            <img src={band.logo} alt="" />
-            <section>
-              <h2>{band.name}</h2>
-              <h4>MUSIC GENRE {band.genre}</h4>
-              <Link href={`./bands/${band.slug}`}>READ MORE ABOUT {band.name}</Link>
-            </section>
-          </article>
-        );
-      })}
-    </>
+    <article>
+      {stages.map((stage, obj) => (
+        <section key={obj}>
+          <h2>{stage}</h2>
+          <OneScene data={data[stage]} />
+        </section>
+      ))}
+    </article>
+  );
+}
+
+function OneScene({ data }) {
+  const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+  return (
+    <div>
+      {daysOfWeek.map((day, obj) => (
+        <DayOneStage key={obj} data={data} day={day} />
+      ))}
+    </div>
+  );
+}
+
+function DayOneStage({ data, day }) {
+  return (
+    <div>
+      <h2>{day}</h2>
+      {data[day].map((act, obj) => (
+        <h2 key={obj}>{act.act}</h2>
+      ))}
+    </div>
   );
 }

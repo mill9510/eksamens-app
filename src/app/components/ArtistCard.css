@@ -1,0 +1,27 @@
+article {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: none;
+  cursor: pointer;
+}
+
+img,
+section {
+  grid-area: 1/-1;
+}
+
+.overlay {
+  background: linear-gradient(0deg, black, rgba(13, 13, 13, 0.2));
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  align-self: end;
+}
