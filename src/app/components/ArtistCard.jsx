@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./ProgramCard.css";
+import "./ArtistCard.css";
 import Link from "next/link";
 
 export default async function BandCard() {
