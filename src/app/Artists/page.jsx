@@ -1,5 +1,4 @@
 import Image from "next/image";
-import BandCard from "../components/BandCard";
 import "../globals.css";
 import "./Artists.css";
 import Navbar from "../components/Navbar";
