@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import "./slug.css";
 
 //gør dette til en statisk page
 export async function generateStaticParams() {
@@ -36,7 +37,7 @@ export default async function ProgramSingleView({ params }) {
 
   return (
     //her returneres data, som hentes via fetch
-    <main>
+    <main className="slugLayout">
       <section>
         <img src={logo} alt="image that represents the band" />
         <p>{logoCredits}</p>
