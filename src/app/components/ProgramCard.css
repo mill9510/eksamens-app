@@ -1,7 +1,7 @@
 article {
   display: grid;
   grid-template-columns: 1fr;
-  border: black 3px solid;
+  border: none;
 }
 
 img,
@@ -9,8 +9,19 @@ section {
   grid-area: 1/-1;
 }
 
+.overlay {
+  background-color: black;
+  opacity: 0.3;
+}
+
 img {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+h2,
+.link {
+  text-align: center;
+  color: white;
 }

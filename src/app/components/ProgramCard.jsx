@@ -11,18 +11,20 @@ export default async function BandCard() {
 
   return (
     <>
-      {data.map((band) => {
-        return (
-          <article key={slug}>
-            <img src={band.logo} alt="" />
-            <section>
-              <h2>{band.name}</h2>
-              <h4>MUSIC GENRE {band.genre}</h4>
-              <Link href={`./bands/${band.slug}`}>READ MORE ABOUT {band.name}</Link>
-            </section>
-          </article>
-        );
-      })}
+      {data
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((band) => {
+          return (
+            <Link legacyBehavior key={slug} className="link" href={`./bands/${band.slug}`}>
+              <article>
+                <img src={band.logo} alt="" />
+                <section className="overlay">
+                  <h2>{band.name}</h2>
+                </section>
+              </article>
+            </Link>
+          );
+        })}
     </>
   );
 }
