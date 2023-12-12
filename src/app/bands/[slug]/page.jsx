@@ -35,6 +35,7 @@ export default async function ProgramSingleView({ params }) {
   console.log(data);
 
   return (
+    //her returneres data, som hentes via fetch
     <main>
       <section>
         <img src={logo} alt="image that represents the band" />
