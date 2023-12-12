@@ -1,5 +1,5 @@
 export default async function ProgramCard() {
-  const res = await fetch("http://localhost:8080/schedule");
+  const res = await fetch("https://pollen-flawless-aerosteon.glitch.me/schedule");
   const data = await res.json();
 
   console.log(data);
