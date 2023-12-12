@@ -1,6 +1,6 @@
 "use client";
 import { useContext } from "react";
-import { BasketValueContext } from "../contexts/basketContext";
+import { BasketValueContext, BasketUpdaterContext } from "../contexts/basketContext";
 import Link from "next/link";
 import "./Navbar.css";
 import Image from "next/image";
