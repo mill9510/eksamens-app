@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../components/details.css";
 import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
+import Button from "./Button";
 /* import React from "react";
 import styles from "../components/details.css";
 
@@ -158,6 +159,16 @@ export default function Details() {
         <label>Amount: </label>
         <input type="number" name="amount" value={reserveData.amount} onChange={handleInputChange} />
         <button onClick={handleReservePut}>Reserve Spot</button>
+      </div>
+      <div>
+        <div>
+          <p>2 person tent 299kr</p>
+          <button onClick={() => dispatch((o) => o.concat({ tent: "2 person", tentPrice: 299 }))}>Læg i kurv</button>
+        </div>
+        <div>
+          <p>3 person tent 399kr</p>
+          <button onClick={() => dispatch((o) => o.concat({ tent: "3 person", tentPrice: 399 }))}>Læg i kurv</button>
+        </div>
       </div>
     </>
   );

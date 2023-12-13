@@ -1,8 +1,10 @@
 "use client";
 import { useContext } from "react";
 import { BasketUpdaterContext, BasketValueContext } from "../contexts/basketContext";
+import Button from "../components/Button";
 
 import styles from "../page.module.css";
+import Link from "next/link";
 
 export default function Kurv() {
   const dispatch = useContext(BasketUpdaterContext);
@@ -15,12 +17,19 @@ export default function Kurv() {
         {state.map((item) => {
           return (
             <li>
-              {item.ticket}, {item.price},-
+              <h2>
+                {item.ticket} <span>{item.price}</span>
+              </h2>
+              <h4>
+                {item.tent} {item.tentPrice}
+              </h4>
             </li>
           );
         })}
       </ul>
-      <button onClick={() => dispatch((old) => old.concat({ title: "T-Shirt", price: 350 }))}>Læg i kurv</button>
+      <Link href="/form">
+        <button>KØB</button>
+      </Link>
     </main>
   );
 }
