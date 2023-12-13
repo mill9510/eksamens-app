@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default async function BandCard() {
   //fetcher data fra databasen med endpoint bands
-  const res = await fetch("https://pollen-flawless-aerosteon.glitch.me/bands");
+  const res = await fetch(`https://pollen-flawless-aerosteon.glitch.me/bands`);
   const data = await res.json();
   const { name, members, genre, logoCredits, logo, bio, slug } = data;
 

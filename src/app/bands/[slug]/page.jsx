@@ -4,7 +4,7 @@ import "./slug.css";
 
 //gør dette til en statisk page
 export async function generateStaticParams() {
-  const res = await fetch("https://pollen-flawless-aerosteon.glitch.me/bands");
+  const res = await fetch(`https://pollen-flawless-aerosteon.glitch.me/bands`);
   const data = await res.json();
 
   const paths = data.map((page) => {
