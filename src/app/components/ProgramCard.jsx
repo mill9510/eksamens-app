@@ -1,3 +1,5 @@
+import "./ProgramCard.css";
+
 export default async function ProgramCard() {
   const res = await fetch("http://localhost:8080/schedule");
   const data = await res.json();
@@ -7,10 +9,11 @@ export default async function ProgramCard() {
   const stages = Object.keys(data);
 
   return (
+    //dette er main componenten, som mapper gennem const stages
     <article>
       {stages.map((stage, obj) => (
         <section key={obj}>
-          <h2>{stage}</h2>
+          <h3>{stage}</h3>
           <OneScene data={data[stage]} />
         </section>
       ))}
@@ -22,7 +25,7 @@ function OneScene({ data }) {
   const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
   return (
-    <div>
+    <div className="oneScene">
       {daysOfWeek.map((day, obj) => (
         <DayOneStage key={obj} data={data} day={day} />
       ))}
@@ -32,10 +35,12 @@ function OneScene({ data }) {
 
 function DayOneStage({ data, day }) {
   return (
-    <div>
-      <h2>{day}</h2>
+    <div className="oneDay">
+      <h4>{day}</h4>
       {data[day].map((act, obj) => (
-        <h2 key={obj}>{act.act}</h2>
+        <h5 key={obj}>
+          {act.act} FROM {act.start} - {act.end}
+        </h5>
       ))}
     </div>
   );
