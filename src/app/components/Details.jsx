@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../components/details.css";
 import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
+import { useRouter } from "next/navigation";
 import Button from "./Button";
 /* import React from "react";
 import styles from "../components/details.css";
@@ -50,6 +51,7 @@ export default async function Details() {
 export default function Details() {
   const dispatch = useContext(BasketUpdaterContext);
   const [selectedArea, setSelectedArea] = useState(null);
+  const router = useRouter();
 
   const [reserveData, setReserveData] = useState({
     area: "",
@@ -121,6 +123,7 @@ export default function Details() {
 
       if (fulfillResponse.ok) {
         console.log("Reservation fulfilled");
+        router.push("/form");
       } else {
         console.error("Fulfillment failed");
       }
