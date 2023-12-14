@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Forside titel="FOOFEST" />
-      <Button text="Tickets" />
     </main>
   );
 }
