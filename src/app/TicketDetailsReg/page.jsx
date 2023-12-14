@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
 
 function page() {
-  const dispatch = useContext(BasketUpdaterContext);
+  //const dispatch = useContext(BasketUpdaterContext);
   return (
     <div className="gridContainer">
       <TicketCardRegular buttontext="" />

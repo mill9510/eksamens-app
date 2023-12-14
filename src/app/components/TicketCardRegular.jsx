@@ -12,9 +12,8 @@ function TicketCardRegular(props) {
       <h2>REGULAR</h2>
       <h1>799,-</h1>
       <Link href="/TicketDetailsReg">
-        <button>{props.buttontext}</button>
+        <button onClick={() => dispatch((o) => o.concat({ ticket: "Regular", price: 799 }))}>Læg i kurv</button>
       </Link>
-      {/* <button onClick={() => dispatch((o) => o.concat({ ticket: "Regular", price: 799 }))}>Læg i kurv</button> */}
     </div>
   );
 }
