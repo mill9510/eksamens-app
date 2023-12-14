@@ -15,15 +15,6 @@ export async function generateStaticParams() {
 }
 
 //genererer metadata til siden på page name og description
-/* export async function generateMetadata(params) {
-  const { slug } = params;
-  const res = await fetch(`https://pollen-flawless-aerosteon.glitch.me/${slug}`);
-  const data = await res.json();
-  return {
-    title: data.name,
-    description: `${data.name}`,
-  };
-} */
 
 export async function generateMetadata(params) {
   const { slug } = params;
