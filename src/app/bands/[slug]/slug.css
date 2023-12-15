@@ -1,17 +1,101 @@
 .imgbands {
   border: 2px solid red;
-  margin: 10rem;
+  margin-right: 5%;
+  margin-left: 5%;
+
+  width: 90%;
+  height: 85%;
+  z-index: -1;
+  position: absolute;
 }
 
-p {
-  border: 2px solid rgb(4, 29, 255);
+.credits {
+  width: 90%;
+  margin-left: 5%;
+  position: absolute;
+  bottom: 10%;
 }
-h2 {
-  border: 2px solid green;
+
+.members {
+  color: white;
+  font-size: 4rem;
+  margin: 2rem;
 }
-h3 {
-  border: 2px solid greenyellow;
+.genre {
+  color: white;
+  font-size: 1rem;
+  margin: 1rem;
 }
-h4 {
-  border: 2px solid rebeccapurple;
+.bio {
+  color: white;
+  font-size: 2rem;
+  margin: 2rem 10rem;
+}
+.box5 {
+  border: 2px solid rgba(255, 47, 168, 0);
+  height: 50rem;
+}
+
+.info {
+  justify-content: center;
+  text-align: center;
+  margin: 0 10%;
+}
+
+.titel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15rem;
+  font-size: 130px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15rem;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: white;
+  width: 60%;
+}
+
+.invis {
+  height: 27rem;
+}
+
+@media (max-width: 1500px) {
+  .invis {
+    height: 27rem;
+  }
+}
+@media (max-width: 1400px) {
+  .invis {
+    height: 25rem;
+  }
+}
+@media (max-width: 1300px) {
+  .invis {
+    height: 23rem;
+  }
+}
+@media (max-width: 1200px) {
+  .invis {
+    height: 21rem;
+  }
+}
+@media (max-width: 1100px) {
+  .invis {
+    height: 19rem;
+  }
+}
+@media (max-width: 1000px) {
+  .invis {
+    height: 17rem;
+  }
 }
