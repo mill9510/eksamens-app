@@ -9,11 +9,7 @@ function Forside(props) {
       <h1 className="titel">{props.titel}</h1>
       <Button text="Tickets" />
       <div className="invis"></div>
-      <h2 className="text">
-        FOOFEST IS ALL ABOUT SHARING SPECIAL <br />
-        MOMENTS WITH OLD FRIENDS, NEW FRIENDS, <br />
-        WEIRD FRIENDS AND FUN FRIENDS.
-      </h2>
+      <h2 className="text">{props.text}</h2>
       <br />
       <ProgramButton />
     </>

@@ -8,8 +8,13 @@ import Galleri from "./components/Galleri";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Forside titel="FOOFEST" />
-      <Button text="Tickets" />
+      <Forside
+        titel="FOOFEST"
+        text="FOOFEST IS ALL ABOUT SHARING SPECIAL 
+        MOMENTS WITH OLD FRIENDS, NEW FRIENDS, 
+        WEIRD FRIENDS AND FUN FRIENDS."
+      />
+
       <Galleri />
     </main>
   );

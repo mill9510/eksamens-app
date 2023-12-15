@@ -1,4 +1,17 @@
-.slugLayout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.imgbands {
+  border: 2px solid red;
+  margin: 10rem;
+}
+
+p {
+  border: 2px solid rgb(4, 29, 255);
+}
+h2 {
+  border: 2px solid green;
+}
+h3 {
+  border: 2px solid greenyellow;
+}
+h4 {
+  border: 2px solid rebeccapurple;
 }

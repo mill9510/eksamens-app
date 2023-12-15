@@ -39,7 +39,7 @@ export default async function ProgramSingleView({ params }) {
     //her returneres data, som hentes via fetch
     <main className="slugLayout">
       <section>
-        <img src={logo} alt="image that represents the band" />
+        <img className="imgbands" src={logo} alt="image that represents the band" />
         <p>{logoCredits}</p>
       </section>
       <section>
