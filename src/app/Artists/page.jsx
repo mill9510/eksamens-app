@@ -15,7 +15,7 @@ INTERNATIONAL ARTISTS. WHAT THEY ALL HAVE IN COMMON
 IS A BURNING PASSION FOR MUSIC AND ART. "
       />
       <h3>JULY 2. –– JULY 8.</h3>
-      <section className="SectionGrid">
+      <section className="SectionGrid1">
         <ArtistCard />
       </section>
     </>

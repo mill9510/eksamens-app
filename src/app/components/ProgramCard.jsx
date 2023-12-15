@@ -10,7 +10,7 @@ export default async function ProgramCard() {
 
   return (
     //dette er main componenten, som mapper gennem const stages
-    <article>
+    <article className="ProgramSectionGrid">
       {stages.map((stage, obj) => (
         <section key={obj}>
           <h3>{stage}</h3>

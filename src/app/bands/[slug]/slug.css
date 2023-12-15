@@ -1,5 +1,4 @@
 .imgbands {
-  border: 2px solid red;
   margin-right: 5%;
   margin-left: 5%;
 
@@ -32,7 +31,7 @@
   margin: 2rem 10rem;
 }
 .box5 {
-  border: 2px solid rgba(255, 47, 168, 0);
+  border: 2px solid rgba(241, 63, 167, 0);
   height: 50rem;
 }
 

@@ -8,17 +8,15 @@ import Button from "../components/Button";
 export default async function Program() {
   return (
     <>
-      <main>
-        <Forside
-          titel="Program"
-          text="KEEP YOURSELF UPDATED DURING THE FESTIVAL WEEK,
+      <Forside
+        titel="Program"
+        text="KEEP YOURSELF UPDATED DURING THE FESTIVAL WEEK,
           AND FIND OUT WHAT SCENES YOUR FAVORITE BANDS 
           PLAY AT "
-        />
-        <section>
-          <ProgramCard />
-        </section>
-      </main>
+      />
+      <section className="SectionGrid2">
+        <ProgramCard />
+      </section>
     </>
   );
 }
