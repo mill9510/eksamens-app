@@ -32,3 +32,15 @@ h5 {
   color: white;
   text-align: center;
 }
+
+.box {
+  border: 2px solid rgb(206, 68, 68);
+}
+
+.day {
+  border: 2px solid rgb(68, 206, 126);
+}
+
+.bands {
+  border: 2px solid rgb(82, 68, 206);
+}

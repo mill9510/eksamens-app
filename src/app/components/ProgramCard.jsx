@@ -1,7 +1,7 @@
 import "./ProgramCard.css";
 
 export default async function ProgramCard() {
-  const res = await fetch("http://localhost:8080/schedule");
+  const res = await fetch("https://pollen-flawless-aerosteon.glitch.me/schedule");
   const data = await res.json();
 
   console.log(data);
@@ -10,9 +10,9 @@ export default async function ProgramCard() {
 
   return (
     //dette er main componenten, som mapper gennem const stages
-    <article>
+    <article className="box">
       {stages.map((stage, obj) => (
-        <section key={obj}>
+        <section className="box" key={obj}>
           <h3>{stage}</h3>
           <OneScene data={data[stage]} />
         </section>
@@ -36,9 +36,9 @@ function OneScene({ data }) {
 function DayOneStage({ data, day }) {
   return (
     <div className="oneDay">
-      <h4>{day}</h4>
+      <h4 className="day">{day}</h4>
       {data[day].map((act, obj) => (
-        <h5 key={obj}>
+        <h5 className="bands" key={obj}>
           {act.act} FROM {act.start} - {act.end}
         </h5>
       ))}
