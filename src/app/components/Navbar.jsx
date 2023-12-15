@@ -23,10 +23,10 @@ function Navbar() {
                 <Link href="/tickets">Tickets</Link>
               </li>
               <li className="navitem">
-                <Link href="/overview">Artists</Link>
+                <Link href="/Artists">Artists</Link>
               </li>
               <li className="navitem">
-                <Link href="/program">Program</Link>
+                <Link href="/Program">Program</Link>
               </li>
               <li>
                 <div>
