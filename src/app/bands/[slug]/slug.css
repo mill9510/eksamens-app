@@ -37,6 +37,7 @@
 }
 
 .info {
+  display: grid;
   justify-content: center;
   text-align: center;
   margin: 0 10%;
