@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import "./slug.css";
+import Button from "@/app/components/Button";
+import ProgramButton from "@/app/components/ProgramButton";
 
 //gør dette til en statisk page
 export async function generateStaticParams() {
@@ -38,15 +40,17 @@ export default async function ProgramSingleView({ params }) {
   return (
     //her returneres data, som hentes via fetch
     <main className="slugLayout">
-      <section>
-        <img src={logo} alt="image that represents the band" />
-        <p>{logoCredits}</p>
+      <section className="box5">
+        <img className="imgbands" src={logo} alt="image that represents the band" />
+        <h1 className="titel">{name}</h1>
+        <Button text="Tickets" />
+        <p className="credits">{logoCredits}</p>
       </section>
-      <section>
-        <h2>{name}</h2>
-        <h3>{members}</h3>
-        <h4>{genre}</h4>
-        <p>{bio ? bio : ""}</p>
+      <div className="invis"></div>
+      <section className="info">
+        <h3 className="members">{members}</h3>
+        <h4 className="genre">{genre}</h4>
+        <p className="bio">{bio ? bio : ""}</p>
       </section>
     </main>
   );

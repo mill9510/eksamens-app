@@ -1,8 +1,10 @@
 .oneScene {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .oneDay {
-  border-top: solid white 2px;
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -21,6 +23,7 @@ h3 {
   color: white;
   font-size: 1.8rem;
   text-align: center;
+  margin-top: 4rem;
 }
 
 h4 {
@@ -33,14 +36,11 @@ h5 {
   text-align: center;
 }
 
-.box {
-  border: 2px solid rgb(206, 68, 68);
-}
-
 .day {
-  border: 2px solid rgb(68, 206, 126);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  text-align: left;
 }
 
 .bands {
-  border: 2px solid rgb(82, 68, 206);
+  padding: 0.5rem;
 }

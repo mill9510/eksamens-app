@@ -9,17 +9,49 @@
   color: white;
 }
 
-.invis {
-  height: 40rem;
-}
-
 .text {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  margin: 0 auto;
   margin-top: 15rem;
   font-size: 40px;
   text-transform: uppercase;
   color: white;
+  width: 60%;
+}
+
+.invis {
+  height: 30rem;
+}
+
+@media (max-width: 1500px) {
+  .invis {
+    height: 27rem;
+  }
+}
+@media (max-width: 1400px) {
+  .invis {
+    height: 25rem;
+  }
+}
+@media (max-width: 1300px) {
+  .invis {
+    height: 23rem;
+  }
+}
+@media (max-width: 1200px) {
+  .invis {
+    height: 21rem;
+  }
+}
+@media (max-width: 1100px) {
+  .invis {
+    height: 19rem;
+  }
+}
+@media (max-width: 1000px) {
+  .invis {
+    height: 17rem;
+  }
 }

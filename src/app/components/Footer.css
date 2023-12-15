@@ -1,0 +1,30 @@
+hr {
+  size: 1;
+
+  color: white;
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.footercontent {
+  display: flex;
+}
+.box1,
+.box2,
+.box3 {
+  flex: 25%;
+  text-align: center;
+  margin-top: 2.7rem;
+}
+h1 {
+  color: #ffffff;
+  font-size: medium;
+}
+p {
+  color: white;
+}
+
+.footer {
+  height: 17rem;
+  background-color: #ffffff00;
+}

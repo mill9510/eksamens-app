@@ -10,9 +10,9 @@ export default async function ProgramCard() {
 
   return (
     //dette er main componenten, som mapper gennem const stages
-    <article className="box">
+    <article>
       {stages.map((stage, obj) => (
-        <section className="box" key={obj}>
+        <section key={obj}>
           <h3>{stage}</h3>
           <OneScene data={data[stage]} />
         </section>

@@ -9,6 +9,7 @@
     "pic4 pic5 pic6 nocontent2"
     "pic7 nocontent3 pic8 pic9";
   margin: 15rem;
+  justify-content: center;
 }
 
 .pic1 {
