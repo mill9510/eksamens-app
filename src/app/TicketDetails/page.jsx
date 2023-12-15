@@ -6,7 +6,7 @@ import styles from "../TicketDetails/ticketDetails.css";
 function page() {
   return (
     <div className="gridContainer">
-      <TicketCard />
+      <TicketCard buttontext="Læg i kurv" />
       <Details />
     </div>
   );

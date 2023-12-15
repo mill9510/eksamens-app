@@ -14,7 +14,7 @@ function Tickets() {
     <>
       <div className="ticketGrid">
         <div className="card1">
-          <TicketCard />
+          <TicketCard buttontext="BUY TICKET" />
         </div>
         <div className="card2">
           <TicketCardRegular />

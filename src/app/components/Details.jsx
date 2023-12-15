@@ -1,4 +1,10 @@
 "use client";
+import React, { useState, useEffect } from "react";
+import styles from "../components/details.css";
+import { useContext } from "react";
+import { BasketUpdaterContext } from "../contexts/basketContext";
+import { useRouter } from "next/navigation";
+import Button from "./Button";
 /* import React from "react";
 import styles from "../components/details.css";
 
@@ -40,14 +46,12 @@ export default async function Details() {
 }
  */
 
-import React, { useState, useEffect } from "react";
-import styles from "../components/details.css";
-import { useContext } from "react";
-import { BasketUpdaterContext } from "../contexts/basketContext";
+//EN MASSE FUCKING HJÆLP FRA NETTET, HVORFOR SKAL REQUESTES VÆRE SÅDAN DER??
 
 export default function Details() {
   const dispatch = useContext(BasketUpdaterContext);
   const [selectedArea, setSelectedArea] = useState(null);
+  const router = useRouter();
 
   const [reserveData, setReserveData] = useState({
     area: "",
@@ -58,10 +62,10 @@ export default function Details() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("http://localhost:8080/available-spots");
+      const res = await fetch("http://pollen-flawless-aerosteon.glitch.me/available-spots");
       const data = await res.json();
 
-      console.log("Fetched data:", data); // Log the entire data object
+      console.log("Fetched data:", data); // vis dataen
 
       if (Array.isArray(data)) {
         setAreas(data.map((area) => area.area));
@@ -85,7 +89,7 @@ export default function Details() {
     });
 
     try {
-      const response = await fetch("http://localhost:8080/reserve-spot", {
+      const response = await fetch("http://pollen-flawless-aerosteon.glitch.me/reserve-spot", {
         method: "PUT",
         body: body,
         headers: {
@@ -95,15 +99,36 @@ export default function Details() {
 
       if (response.ok) {
         console.log("Reservation successful");
-        dis;
-        // You may want to handle the response further if needed
+        const reservationData = await response.json(); // venter på at få id'et tilbage
+        const { id } = reservationData; // destrukturerer id'et
+        await fulfillReservation(id); // kalder fulfillReservation med id'et
+        console.log(reservationData); // viser id'et
       } else {
         console.error("Reservation failed");
-        // Handle the failure, maybe show an error message to the user
       }
     } catch (error) {
       console.error("Error during reservation:", error);
-      // Handle the error, maybe show an error message to the user
+    }
+  };
+
+  const fulfillReservation = async (reservationId) => {
+    try {
+      const fulfillResponse = await fetch("http://pollen-flawless-aerosteon.glitch.me/fullfill-reservation", {
+        method: "POST",
+        body: JSON.stringify({ id: reservationId }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (fulfillResponse.ok) {
+        console.log("Reservation fulfilled");
+        router.push("/form");
+      } else {
+        console.error("Fulfillment failed");
+      }
+    } catch (error) {
+      console.error("Error during fulfillment:", error);
     }
   };
 
@@ -137,6 +162,16 @@ export default function Details() {
         <label>Amount: </label>
         <input type="number" name="amount" value={reserveData.amount} onChange={handleInputChange} />
         <button onClick={handleReservePut}>Reserve Spot</button>
+      </div>
+      <div>
+        <div>
+          <p>2 person tent 299kr</p>
+          <button onClick={() => dispatch((o) => o.concat({ tent: "2 person", tentPrice: 299 }))}>Læg i kurv</button>
+        </div>
+        <div>
+          <p>3 person tent 399kr</p>
+          <button onClick={() => dispatch((o) => o.concat({ tent: "3 person", tentPrice: 399 }))}>Læg i kurv</button>
+        </div>
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./BandCard.css";
 
 export default async function BandCard() {
-  const res = await fetch("http://localhost:8080/bands");
+  const res = await fetch(`https://pollen-flawless-aerosteon.glitch.me/bands`);
   const data = await res.json();
   const { name, members, genre, logoCredits, logo, bio, slug } = data;
 
