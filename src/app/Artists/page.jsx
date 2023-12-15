@@ -8,18 +8,16 @@ import ArtistCard from "../components/ArtistCard";
 export default async function Bands() {
   return (
     <>
-      <main>
-        <Forside
-          titel="Artists"
-          text="THIS YEARS LINEUP INCLUDES BOTH NATIONAL AND 
+      <Forside
+        titel="Artists"
+        text="THIS YEARS LINEUP INCLUDES BOTH NATIONAL AND 
 INTERNATIONAL ARTISTS. WHAT THEY ALL HAVE IN COMMON
 IS A BURNING PASSION FOR MUSIC AND ART. "
-        />
-        <h3>JULY 2. –– JULY 8.</h3>
-        <section>
-          <ArtistCard />
-        </section>
-      </main>
+      />
+      <h3>JULY 2. –– JULY 8.</h3>
+      <section className="SectionGrid">
+        <ArtistCard />
+      </section>
     </>
   );
 }

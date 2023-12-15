@@ -2,28 +2,43 @@
 import { createClient } from "@supabase/supabase-js";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { useContext } from "react"; // Import useContext
+import { BasketValueContext, BasketUpdaterContext } from "../contexts/basketContext"; // Update the path accordingly
 import "../components/Form.css";
 import Link from "next/link";
 
-export default function Form() {
+export default function BasketForm() {
   const { register, handleSubmit } = useForm();
   const router = useRouter();
 
+  // Use useContext to get the basket state and updater function
+  const basket = useContext(BasketValueContext);
+  const setBasket = useContext(BasketUpdaterContext);
+
   const supabaseUrl = "https://pgsftrrsbbbudldfziuu.supabase.co";
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnc2Z0cnJzYmJidWRsZGZ6aXV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI0OTIyNjYsImV4cCI6MjAxODA2ODI2Nn0.AUcunLPhO_tW_3HzvOCDOsR0hdBnyDVpQNyKqmRO3t0";
+  const supabaseKey = "YOUR_SUPABASE_KEY"; // Replace with your actual Supabase key
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const onSubmit = async (data) => {
     try {
-      // Send a POST request to Supabase
-      const { data: response, error } = await supabase.from("FormData").upsert([data]);
+      // Send a POST request to Supabase for each ticket
+      const promises = basket.map(async (ticket) => {
+        const { data: response, error } = await supabase.from("FormData").upsert({ ...data, ticketId: ticket.id }); // Assuming you want to associate each form data with a ticket
+        if (error) {
+          console.error("Error submitting data to Supabase:", error.message);
+        } else {
+          console.log("Data submitted successfully:", response);
+        }
+      });
 
-      if (error) {
-        console.error("Error submitting data to Supabase:", error.message);
-      } else {
-        console.log("Data submitted successfully:", response);
-        router.push("/checkout");
-      }
+      // Wait for all requests to complete before navigating
+      await Promise.all(promises);
+
+      // Navigate to the checkout page after successful submission
+      router.push("/checkout");
+
+      // Clear the basket after submission
+      setBasket([]);
     } catch (error) {
       console.error("Error:", error.message);
     }
@@ -31,27 +46,24 @@ export default function Form() {
 
   return (
     <>
-      <form className="formGrid" onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label htmlFor="fornavn">Fornavn</label>
-          <input {...register("fornavn")} />
-        </div>
-        <div>
-          <label htmlFor="efternavn">Efternavn</label>
-          <input {...register("efternavn")} />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input {...register("email")} />
-        </div>
-        <div>
-          <label htmlFor="telefon">Telefon Nummer</label>
-          <input {...register("telefon")} />
-        </div>
-        <div>
-          <button type="submit">Check out</button>
-        </div>
-      </form>
+      {basket.map((ticket) => (
+        <form key={ticket.id} className="formGrid" onSubmit={handleSubmit(onSubmit)}>
+          <h2>{ticket.name}</h2>
+          <label htmlFor={`fornavn_${ticket.id}`}>Fornavn</label>
+          <input {...register(`fornavn_${ticket.id}`)} />
+
+          <label htmlFor={`efternavn_${ticket.id}`}>Efternavn</label>
+          <input {...register(`efternavn_${ticket.id}`)} />
+
+          <label htmlFor={`email_${ticket.id}`}>Email</label>
+          <input {...register(`email_${ticket.id}`)} />
+
+          <label htmlFor={`telefon_${ticket.id}`}>Telefon Nummer</label>
+          <input {...register(`telefon_${ticket.id}`)} />
+
+          <button type="submit">Check out {ticket.name}</button>
+        </form>
+      ))}
     </>
   );
 }
