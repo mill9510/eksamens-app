@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { BasketUpdaterContext, BasketValueContext } from "../contexts/basketContext";
 import Button from "../components/Button";
 
-import styles from "../page.module.css";
+import "../kurv/kurv.css";
 import Link from "next/link";
 
 export default function Kurv() {
@@ -11,7 +11,7 @@ export default function Kurv() {
   const state = useContext(BasketValueContext);
 
   return (
-    <main className={styles.main}>
+    <main className="kurvContainer">
       <h1>Kurv</h1>
       <ul>
         {state.map((item) => {
