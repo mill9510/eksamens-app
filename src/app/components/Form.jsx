@@ -65,16 +65,17 @@ export default function BasketForm() {
 
   return (
     <>
+      {" "}
       {basket.map((ticket) => (
         <form key={ticket.id} className="formGrid" onSubmit={handleSubmit(onSubmit)}>
           <h2>{ticket.ticket}</h2>
           <label typeof="text" htmlFor={`fornavn_${ticket.id}`}>
-            Fornavn
+            Name
           </label>
           <input {...register(`fornavn_${ticket.id}`)} />
 
           <label typeof="text" htmlFor={`efternavn_${ticket.id}`}>
-            Efternavn
+            Surname
           </label>
           <input {...register(`efternavn_${ticket.id}`)} />
 
@@ -84,7 +85,7 @@ export default function BasketForm() {
           <input {...register(`email_${ticket.id}`)} />
 
           <label typeof="numeric" htmlFor={`telefon_${ticket.id}`}>
-            Telefon Nummer
+            Phone number
           </label>
           <input {...register(`telefon_${ticket.id}`)} />
         </form>
