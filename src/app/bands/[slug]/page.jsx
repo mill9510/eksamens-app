@@ -41,7 +41,7 @@ export default async function ProgramSingleView({ params }) {
     //her returneres data, som hentes via fetch
     <main className="slugLayout">
       <section className="box5">
-        <img className="imgbands" src={logo.startsWith("http") ? logo : `http://localhost:8080/logos/${logo}`} alt="Image that represents the band" />
+        <img className="imgbands" src={logo.startsWith("http") ? logo : `https://glitch.com/pollen-flawless-aerosteon/logos/${logo}`} alt="Image that represents the band" />
         <h1 className="titel">{name}</h1>
         <Button text="Tickets" />
         <p className="credits">{logoCredits}</p>
