@@ -6,3 +6,11 @@
   margin-top: 15rem;
   border: 2px white solid;
 }
+
+@media only screen and (max-width: 800px) {
+  .ticketGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+}

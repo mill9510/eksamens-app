@@ -1,4 +1,3 @@
-import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
 import Forside from "./components/Forside";
 import Button from "./components/Button";
@@ -7,7 +6,7 @@ import Galleri from "./components/Galleri";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <Forside
         titel="FOOFEST"
         text="FOOFEST IS ALL ABOUT SHARING SPECIAL 

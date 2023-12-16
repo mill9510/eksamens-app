@@ -11,9 +11,8 @@ function page() {
   //const dispatch = useContext(BasketUpdaterContext);
   return (
     <div className="gridContainer">
-      <TicketCardRegular buttontext="" />
+      <TicketCardRegular buttontext="Læg i kurv" />
       <Details />
-      <button onClick={() => dispatch((o) => o.concat({ ticket: "Regular", price: 799 }))}>Læg i kurv</button>
     </div>
   );
 }

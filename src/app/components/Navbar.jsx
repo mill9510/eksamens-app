@@ -4,16 +4,18 @@ import { BasketValueContext, BasketUpdaterContext } from "../contexts/basketCont
 import Link from "next/link";
 import "./Navbar.css";
 import Image from "next/image";
+import Burgermenu from "./Burgermenu";
+import pic from "../components/imgs/circle.svg";
 
 function Navbar() {
   const basket = useContext(BasketValueContext);
   return (
-    <main>
+    <>
+      <Burgermenu />
       <header className="header">
         <div className="headercontent">
-          <a href="#" className="logo">
-            <Image src="./imgs/circle.svg" alt="logo" width={200} height={200} className="logoimg" />
-          </a>
+          <Link href={"/"}>/FOO</Link>
+
           <nav className="nav">
             <ul className="navlist">
               <li className="navitem">
@@ -23,10 +25,10 @@ function Navbar() {
                 <Link href="/tickets">Tickets</Link>
               </li>
               <li className="navitem">
-                <Link href="/overview">Artists</Link>
+                <Link href="/Artists">Artists</Link>
               </li>
               <li className="navitem">
-                <Link href="/program">Program</Link>
+                <Link href="/Program">Program</Link>
               </li>
               <li>
                 <div>
@@ -42,7 +44,7 @@ function Navbar() {
           </nav>
         </div>
       </header>
-    </main>
+    </>
   );
 }
 

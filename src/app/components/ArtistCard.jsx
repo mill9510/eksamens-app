@@ -19,8 +19,7 @@ export default async function BandCard() {
           return (
             <Link legacyBehavior key={band.slug} className="link" href={`./bands/${band.slug}`}>
               <article>
-                <img src={band.logo} alt="" />
-
+                <img src={band.logo.startsWith("http") ? band.logo : `http://localhost:8080/logos/${band.logo}`} alt="Image that represents the band" />
                 <section className="overlay">
                   <h2>{band.name}</h2>
                 </section>

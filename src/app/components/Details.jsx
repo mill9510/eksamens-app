@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
 import { useRouter } from "next/navigation";
 import Button from "./Button";
+import { v4 as uuidv4 } from "uuid";
 /* import React from "react";
 import styles from "../components/details.css";
 
@@ -123,7 +124,7 @@ export default function Details() {
 
       if (fulfillResponse.ok) {
         console.log("Reservation fulfilled");
-        router.push("/form");
+        router.push("/kurv");
       } else {
         console.error("Fulfillment failed");
       }
@@ -171,6 +172,9 @@ export default function Details() {
         <div>
           <p>3 person tent 399kr</p>
           <button onClick={() => dispatch((o) => o.concat({ tent: "3 person", tentPrice: 399 }))}>Læg i kurv</button>
+        </div>
+        <div>
+          <p>Fixed booking fee: 90</p>
         </div>
       </div>
     </>

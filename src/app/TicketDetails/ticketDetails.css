@@ -3,3 +3,12 @@
   grid-template-columns: 1fr 1fr;
   place-items: center;
 }
+
+@media only screen and (max-width: 800px) {
+  .gridContainer {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+}
