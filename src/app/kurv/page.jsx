@@ -16,7 +16,7 @@ export default function Kurv() {
       <ul>
         {state.map((item) => {
           return (
-            <li key={id}>
+            <li>
               <h2>
                 {item.ticket} <span>{item.price}</span>
               </h2>

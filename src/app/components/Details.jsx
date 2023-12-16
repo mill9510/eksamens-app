@@ -123,7 +123,7 @@ export default function Details() {
 
       if (fulfillResponse.ok) {
         console.log("Reservation fulfilled");
-        router.push("/form");
+        router.push("/kurv");
       } else {
         console.error("Fulfillment failed");
       }
