@@ -14,7 +14,7 @@ function TicketCard(props) {
       <h2>REGULAR</h2>
       <h1>1299,-</h1>
       <Link href="/TicketDetails">
-        <button onClick={() => dispatch((o) => o.concat({ id: uuidv4(), ticket: "Regular", price: 1299 }))}>Læg i kurv</button>
+        <button onClick={() => dispatch((o) => o.concat({ id: uuidv4(), ticket: "Regular", tentPrice: 1299 }))}>Læg i kurv</button>
       </Link>
     </div>
   );

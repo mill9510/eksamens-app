@@ -8,17 +8,21 @@ import "../components/Form.css";
 import Link from "next/link";
 
 export default function BasketForm() {
+  // Hent register og handleSubmit fra react-hook-form biblioteket
   const { register, handleSubmit } = useForm();
+  // Hent router fra next/navigation
   const router = useRouter();
 
-  // Use useContext to get the basket state and updater function
+  // Brug useContext til at få adgang til basket state og updater function
   const basket = useContext(BasketValueContext);
   const setBasket = useContext(BasketUpdaterContext);
 
+  // URL og nøgle til Supabase
   const supabaseUrl = "https://pgsftrrsbbbudldfziuu.supabase.co";
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnc2Z0cnJzYmJidWRsZGZ6aXV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI0OTIyNjYsImV4cCI6MjAxODA2ODI2Nn0.AUcunLPhO_tW_3HzvOCDOsR0hdBnyDVpQNyKqmRO3t0"; // Replace with your actual Supabase key
   const supabase = createClient(supabaseUrl, supabaseKey);
 
+  // Funktion til at håndtere indsendelse af formulardata til Supabase
   const submitFormData = async (ticket, data) => {
     console.log("Submitting data for ticket:", ticket);
     try {
@@ -41,22 +45,21 @@ export default function BasketForm() {
     }
   };
 
+  // Funktion til at håndtere indsendelse af alle formularer og navigere til checkout-siden
   const onSubmit = async (data) => {
     try {
-      // Use an asynchronous loop to submit each form independently
-      for (const ticket of basket) {
-        await submitFormData(ticket, data);
-      }
+      // Brug Promise.all for at indsende hver formular
+      await Promise.all(basket.map((ticket) => submitFormData(ticket, data)));
 
-      // Navigate to the checkout page after successful submission
+      // Naviger til checkout-siden efter vellykket indsendelse
       router.push("/checkout");
     } catch (error) {
-      console.error("Error:", error.message);
+      console.error("Fejl:", error.message);
     }
   };
-
+  // Funktion til at håndtere samlet checkout for alle billetter
   const handleOverallCheckout = (data) => {
-    // Trigger the onSubmit function for each ticket in the basket
+    // Udløs onSubmit-funktionen for hver billet i kurven
     onSubmit(data);
   };
 
