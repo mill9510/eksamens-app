@@ -11,7 +11,8 @@ export default async function BandCard() {
   console.log(data);
 
   return (
-    //herunder mapper jeg gennem data, hvor jeg via .sort og localeCompare sorterer bands i alfabetisk rækkefølge
+    //herunder mapper jeg gennem data, hvor jeg via .sort og string method localeCompare sorterer bands i alfabetisk rækkefølge
+    // i img spørger jeg om band.logo begynder med hhtp ellers skal den hente fra /logos
     <>
       {data
         .sort((a, b) => a.name.localeCompare(b.name))

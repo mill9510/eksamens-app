@@ -6,10 +6,13 @@ export default async function ProgramCard() {
 
   console.log(data);
 
+  //object.keys henter nøglerne (keys) fra object og returnerer et array
+  //i dette scenare omdanner den altså object fra schedule endpoint til et array og gemmer i const stages
   const stages = Object.keys(data);
 
   return (
     //dette er main componenten, som mapper gennem const stages
+    //og bruger componenten OneScene til at display data fra hver enkelte scene
     <article className="ProgramSectionGrid">
       {stages.map((stage, obj) => (
         <section key={obj}>
@@ -21,9 +24,12 @@ export default async function ProgramCard() {
   );
 }
 
+//oneScene er en undercomponent, som modtager proppen data
 function OneScene({ data }) {
   const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
+  //for hver daysOfWeek produceres en components kaldet DayOneStage og viser data
+  //for den enkelte dag
   return (
     <div className="oneScene">
       {daysOfWeek.map((day, obj) => (
@@ -33,7 +39,10 @@ function OneScene({ data }) {
   );
 }
 
+//DayOneStage er en underundercomponent, som viser data for en specifik dag
+//og modtager props data og day
 function DayOneStage({ data, day }) {
+  //mapper gennem hver aktivitet; act, start og end på en given dag
   return (
     <div className="oneDay">
       <h4 className="day">{day}</h4>
