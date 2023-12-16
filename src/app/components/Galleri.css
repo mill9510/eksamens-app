@@ -17,6 +17,13 @@
     flex-wrap: wrap;
   }
 }
+.socials {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
 .pic1 {
   grid-area: pic1;
