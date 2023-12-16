@@ -13,3 +13,21 @@
   margin-top: 4rem;
   margin-bottom: 2rem;
 }
+
+.basketbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 5rem;
+  margin: auto;
+
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.basketbtn:hover {
+  cursor: pointer;
+}

@@ -7,9 +7,7 @@ function Button(props) {
       {" "}
       <button type="button" className="btn button">
         {" "}
-        <Link href="/tickets">
-          {props.text} <span>&#10230;</span>
-        </Link>
+        {props.text} <span>&#10230;</span>
       </button>{" "}
     </>
   );

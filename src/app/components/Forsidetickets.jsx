@@ -7,7 +7,7 @@ function Forsidetickets(props) {
   return (
     <>
       <h1 className="titel">{props.titel}</h1>
-      <p className="ptext">JULY 22. - JULY 28.</p>
+      <p className="ptext">{props.ptext}</p>
       <div className="invis"></div>
       <h2 className="text">{props.text}</h2>
       <br />
