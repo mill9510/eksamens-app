@@ -3,7 +3,19 @@
   place-items: center;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
-  margin-top: 15rem;
+  margin-top: 5rem;
+  height: 50%;
+  margin-bottom: 5rem;
+}
+.card1 {
+  border: 2px rgb(255, 255, 255) solid;
+  width: 70%;
+  height: 100%;
+}
+.card2 {
+  border: 2px rgb(255, 255, 255) solid;
+  width: 70%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 800px) {

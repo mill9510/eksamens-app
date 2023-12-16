@@ -152,29 +152,29 @@ export default function Details() {
           <div key={area}>
             <article className="areaInput">
               <label>
-                {area}
-                <input type="radio" name="area" value={area} onChange={() => setSelectedArea(area)} />
+                <input className="areabtn" type="radio" name="area" value={area} onChange={() => setSelectedArea(area)} /> {area}
               </label>
             </article>
           </div>
         ))}
       </div>
-      <div>
+
+      <div className="amount">
         <label>Amount: </label>
         <input type="number" name="amount" value={reserveData.amount} onChange={handleInputChange} />
         <button onClick={handleReservePut}>Reserve Spot</button>
       </div>
-      <div>
-        <div>
-          <p>2 person tent 299kr</p>
-          <button onClick={() => dispatch((o) => o.concat({ tent: "2 person", tentPrice: 299 }))}>Læg i kurv</button>
-        </div>
-        <div>
-          <p>3 person tent 399kr</p>
-          <button onClick={() => dispatch((o) => o.concat({ tent: "3 person", tentPrice: 399 }))}>Læg i kurv</button>
-        </div>
-        <div>
-          <p>Fixed booking fee: 90</p>
+
+      <div className="spotdetails">
+        <div className="tentgrid">
+          <div className="tent1">
+            <p>2 person tent </p>
+            <button onClick={() => dispatch((o) => o.concat({ tent: "2 person", tentPrice: 299 }))}>Læg i kurv</button>
+          </div>
+          <div className="tent2">
+            <p>3 person tent </p>
+            <button onClick={() => dispatch((o) => o.concat({ tent: "3 person", tentPrice: 399 }))}>Læg i kurv</button>
+          </div>
         </div>
       </div>
     </>

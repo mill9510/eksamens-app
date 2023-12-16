@@ -3,4 +3,47 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 40%;
+  padding-top: 2rem;
+}
+
+.kurvContainer h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.kurvContainer h2 {
+  border-bottom: 1px solid white;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.kurvContainer h4 {
+  margin-top: 2rem;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.totalprice {
+  font-size: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid white;
+  margin-top: 2rem;
+}
+.kurvContainer button {
+  border: 1px solid rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 5rem;
+  margin: 3rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  background-color: transparent;
 }

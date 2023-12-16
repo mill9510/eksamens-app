@@ -30,23 +30,26 @@ export default function Kurv() {
 
   return (
     <main className="kurvContainer">
-      <h1>Kurv</h1>
+      <h1>Your Basket</h1>
       <ul>
         {basket.map((item) => {
           return (
             <li key={item.id}>
+              {" "}
+              <h4>Type - {item.tent}</h4>
               <h2>
-                {item.ticket} <span>{item.tentPrice}</span>
+                {item.ticket} <span>{item.tentPrice},-</span>
               </h2>
-              <h4>Tent: {item.tent}</h4>
             </li>
           );
         })}
       </ul>
-      <h4>Fixed booking fee: 90</h4>
-      <span>Total Price: {total}</span>
+      <h4>Fixed booking fee - 90,-</h4>
+      <span className="totalprice">
+        Total Price: <br /> {total},-
+      </span>
       <Link href="/form">
-        <button>KØB</button>
+        <button>Checkout</button>
       </Link>
     </main>
   );
