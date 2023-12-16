@@ -2,8 +2,8 @@
 import { createClient } from "@supabase/supabase-js";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { useContext } from "react"; // Import useContext
-import { BasketValueContext, BasketUpdaterContext } from "../contexts/basketContext"; // Update the path accordingly
+import { useContext } from "react";
+import { BasketValueContext, BasketUpdaterContext } from "../contexts/basketContext";
 import "../components/Form.css";
 import Link from "next/link";
 
