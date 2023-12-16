@@ -19,32 +19,34 @@ export default function BasketForm() {
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnc2Z0cnJzYmJidWRsZGZ6aXV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI0OTIyNjYsImV4cCI6MjAxODA2ODI2Nn0.AUcunLPhO_tW_3HzvOCDOsR0hdBnyDVpQNyKqmRO3t0"; // Replace with your actual Supabase key
   const supabase = createClient(supabaseUrl, supabaseKey);
 
+  const submitFormData = async (ticket, data) => {
+    console.log("Submitting data for ticket:", ticket);
+    try {
+      const formData = {
+        fornavn: data[`fornavn_${ticket.id}`],
+        efternavn: data[`efternavn_${ticket.id}`],
+        email: data[`email_${ticket.id}`],
+        telefon: data[`telefon_${ticket.id}`],
+      };
+
+      const { data: response, error } = await supabase.from("FormData").upsert(formData);
+
+      if (error) {
+        console.error("Error submitting data to Supabase:", error.message);
+      } else {
+        console.log("Data submitted successfully:", response);
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  };
+
   const onSubmit = async (data) => {
     try {
-      // Use map to create an array of promises
-      const promises = basket.map(async (ticket) => {
-        const formData = {
-          fornavn: data[`fornavn_${ticket.id}`],
-          efternavn: data[`efternavn_${ticket.id}`],
-          email: data[`email_${ticket.id}`],
-          telefon: data[`telefon_${ticket.id}`],
-        };
-
-        // Return the promise, no need to await it here
-        return supabase.from("FormData").upsert(formData);
-      });
-
-      // Wait for all promises to resolve
-      const responses = await Promise.all(promises);
-
-      // Log responses
-      responses.forEach(({ data, error }) => {
-        if (error) {
-          console.error("Error submitting data to Supabase:", error.message);
-        } else {
-          console.log("Data submitted successfully:", data);
-        }
-      });
+      // Use an asynchronous loop to submit each form independently
+      for (const ticket of basket) {
+        await submitFormData(ticket, data);
+      }
 
       // Navigate to the checkout page after successful submission
       router.push("/checkout");

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 
 import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
@@ -13,7 +14,7 @@ function TicketCard(props) {
       <h2>REGULAR</h2>
       <h1>1299,-</h1>
       <Link href="/TicketDetails">
-        <button onClick={() => dispatch((o) => o.concat({ ticket: "Regular", price: 1299 }))}>Læg i kurv</button>
+        <button onClick={() => dispatch((o) => o.concat({ id: uuidv4(), ticket: "Regular", price: 1299 }))}>Læg i kurv</button>
       </Link>
     </div>
   );
