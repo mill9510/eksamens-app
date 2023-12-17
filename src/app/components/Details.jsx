@@ -24,7 +24,7 @@ export default function Details() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("http://pollen-flawless-aerosteon.glitch.me/available-spots");
+      const res = await fetch("https://pollen-flawless-aerosteon.glitch.me/available-spots");
       const data = await res.json();
 
       console.log("Fetched data:", data); // vis dataen
@@ -51,7 +51,7 @@ export default function Details() {
     });
 
     try {
-      const response = await fetch("http://pollen-flawless-aerosteon.glitch.me/reserve-spot", {
+      const response = await fetch("https://pollen-flawless-aerosteon.glitch.me/reserve-spot", {
         method: "PUT",
         body: body,
         headers: {
@@ -75,7 +75,7 @@ export default function Details() {
 
   const fulfillReservation = async (reservationId) => {
     try {
-      const fulfillResponse = await fetch("http://pollen-flawless-aerosteon.glitch.me/fullfill-reservation", {
+      const fulfillResponse = await fetch("https://pollen-flawless-aerosteon.glitch.me/fullfill-reservation", {
         method: "POST",
         body: JSON.stringify({ id: reservationId }),
         headers: {
