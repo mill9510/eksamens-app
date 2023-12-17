@@ -25,6 +25,7 @@
   text-align: center;
   margin: 0 auto;
   margin-top: 15rem;
+
   font-size: 40px;
   text-transform: uppercase;
   color: white;
@@ -63,5 +64,9 @@
 @media (max-width: 1000px) {
   .invis {
     height: 17rem;
+  }
+
+  .text {
+    margin-bottom: 20rem;
   }
 }
