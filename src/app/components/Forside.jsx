@@ -15,7 +15,7 @@ function Forside(props) {
           </svg>
         </span>
       </div>
-      <div className="invis"></div>
+
       <h2 className="text">{props.text}</h2>
       <br />
       <ProgramButton />

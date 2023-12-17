@@ -31,11 +31,11 @@ function OneScene({ data }) {
   //for hver daysOfWeek produceres en components kaldet DayOneStage og viser data
   //for den enkelte dag
   return (
-    <div className="oneScene">
+    <section className="oneScene">
       {daysOfWeek.map((day, obj) => (
         <DayOneStage key={obj} data={data} day={day} />
       ))}
-    </div>
+    </section>
   );
 }
 
@@ -44,13 +44,13 @@ function OneScene({ data }) {
 function DayOneStage({ data, day }) {
   //mapper gennem hver aktivitet; act, start og end på en given dag
   return (
-    <div className="oneDay">
+    <section className="oneDay">
       <h4 className="day">{day}</h4>
       {data[day].map((act, obj) => (
         <h5 className="bands" key={obj}>
           {act.act} FROM {act.start} - {act.end}
         </h5>
       ))}
-    </div>
+    </section>
   );
 }
