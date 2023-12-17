@@ -124,4 +124,17 @@ input[type="radio"]:focus {
     flex-direction: column;
     height: 10rem;
   }
+  .flexArea {
+    display: flex;
+    justify-content: center;
+  }
+  .flexAreaDiv {
+    display: flex;
+    justify-content: center;
+  }
+
+  .tentgrid {
+    display: flex;
+    gap: 1rem;
+  }
 }

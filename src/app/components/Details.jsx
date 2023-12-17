@@ -110,7 +110,7 @@ export default function Details() {
     <>
       <div className="flexArea">
         {areas.map((area) => (
-          <div key={area}>
+          <div className="flexAreaDiv" key={area}>
             <article className="areaInput">
               <label>
                 <input className="areabtn" type="radio" name="area" value={area} onChange={() => setSelectedArea(area)} /> {area}

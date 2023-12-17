@@ -28,6 +28,13 @@
 
   .card1 {
     height: 100%;
+    width: 90%;
+    padding-bottom: 5rem;
+  }
+  .card2 {
+    height: 100%;
+    width: 90%;
+    padding-bottom: 5rem;
   }
 }
 
