@@ -33,7 +33,7 @@
 }
 
 .invis {
-  height: 30rem;
+  height: 0rem;
 }
 
 @media (max-width: 1500px) {
