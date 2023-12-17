@@ -41,7 +41,7 @@
 
 @media (max-width: 800px) {
   .ptext {
-    font-size: 2px;
+    font-size: 1rem;
   }
 
   button {
