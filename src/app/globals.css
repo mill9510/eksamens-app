@@ -2,7 +2,3 @@
   box-sizing: border-box;
   margin: 0;
 }
-
-main {
-  gradient: linear-gradient(180deg, #8bb0e8 0%, #deb468 100%);
-}
