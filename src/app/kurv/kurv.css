@@ -47,3 +47,31 @@
   color: white;
   background-color: transparent;
 }
+
+@media (max-width: 800px) {
+  .kurvContainer {
+    width: 100%;
+    height: 90%;
+  }
+  .kurvContainer h1 {
+    font-size: 40px;
+  }
+  .kurvContainer h2 {
+    font-size: 20px;
+  }
+  .kurvContainer h4 {
+    font-size: 15px;
+  }
+  .totalprice {
+    font-size: 30px;
+  }
+  .kurvContainer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 3rem;
+    margin: 1rem;
+    font-size: 15px;
+  }
+}

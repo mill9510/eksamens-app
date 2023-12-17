@@ -12,4 +12,39 @@
     flex-direction: column;
     gap: 10rem;
   }
+
+  .flexArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 20rem;
+  }
+
+  .spotdetails,
+  .tentgrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 17rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .ptext {
+    font-size: 2px;
+  }
+
+  button {
+    font-size: 2px;
+  }
 }

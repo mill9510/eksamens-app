@@ -117,3 +117,11 @@ input[type="radio"]:focus {
   border: 2px solid rgb(255, 255, 255);
   padding: 2rem;
 }
+
+@media (max-width: 800px) {
+  .amount {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+  }
+}

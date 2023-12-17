@@ -70,3 +70,17 @@
     margin-bottom: 20rem;
   }
 }
+
+@media (max-width: 800px) {
+  .titel {
+    font-size: 5rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .ptext {
+    font-size: 5px;
+  }
+}

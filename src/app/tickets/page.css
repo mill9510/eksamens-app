@@ -30,3 +30,9 @@
     height: 100%;
   }
 }
+
+@media (max-width: 800px) {
+  .titel {
+    font-size: 5rem;
+  }
+}
