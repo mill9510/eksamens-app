@@ -8,6 +8,7 @@ hr {
 }
 .footercontent {
   display: flex;
+  margin-top: 20rem;
 }
 .box1,
 .box2,

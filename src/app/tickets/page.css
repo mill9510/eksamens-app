@@ -24,4 +24,11 @@
     flex-direction: column;
     gap: 10rem;
   }
+  .text {
+    margin-bottom: 15rem;
+  }
+
+  .card1 {
+    height: 100%;
+  }
 }

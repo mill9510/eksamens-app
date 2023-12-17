@@ -20,6 +20,16 @@
   color: white;
   width: 60%;
 }
+.arrowDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.icon {
+  font-size: 40px;
+}
 
 .invis {
   height: 30rem;

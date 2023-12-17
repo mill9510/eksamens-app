@@ -12,6 +12,11 @@
 .areaInput {
   margin: 0.5rem;
 }
+.detailsBasket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 input[type="radio"] {
   border: 1px solid #fff;

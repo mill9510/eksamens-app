@@ -23,6 +23,7 @@ function Tickets() {
         WHICH AREA WHEN ORDERING YOUR TICKET. "
         ptext="JULY 22. - JULY 28."
       />
+
       <div className="ticketGrid">
         <div className="card1">
           <TicketCard tickettitel="Foofest ´24" ticketname="V.I.P Ticket" ticketprice="1299,-" />

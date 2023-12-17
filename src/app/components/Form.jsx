@@ -1,6 +1,6 @@
 "use client";
 import { createClient } from "@supabase/supabase-js";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { BasketValueContext, BasketUpdaterContext } from "../contexts/basketContext";
@@ -72,22 +72,22 @@ export default function BasketForm() {
           <label typeof="text" htmlFor={`fornavn_${ticket.id}`}>
             Name
           </label>
-          <input {...register(`fornavn_${ticket.id}`)} />
+          <input {...register(`fornavn_${ticket.id}`, { required: true })} />
 
           <label typeof="text" htmlFor={`efternavn_${ticket.id}`}>
             Surname
           </label>
-          <input {...register(`efternavn_${ticket.id}`)} />
+          <input {...register(`efternavn_${ticket.id}`, { required: true })} />
 
           <label typeof="email" htmlFor={`email_${ticket.id}`}>
             Email
           </label>
-          <input {...register(`email_${ticket.id}`)} />
+          <input {...register(`email_${ticket.id}`, { required: "Email Address is required" })} />
 
           <label typeof="numeric" htmlFor={`telefon_${ticket.id}`}>
             Phone number
           </label>
-          <input {...register(`telefon_${ticket.id}`)} />
+          <input {...register(`telefon_${ticket.id}`, { required: true })} />
         </form>
       ))}
       <form className="formGrid" onSubmit={handleSubmit(handleOverallCheckout)}>
