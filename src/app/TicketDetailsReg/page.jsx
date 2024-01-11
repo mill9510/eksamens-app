@@ -7,7 +7,7 @@ import TicketCardRegular from "../components/TicketSingle";
 import { useContext } from "react";
 import { BasketUpdaterContext } from "../contexts/basketContext";
 import Forsidetickets from "../components/Forsidetickets";
-import TicketSingle from "../components/TicketSingle";
+import TicketSingleReg from "../components/TicketSingleReg";
 
 function page() {
   //const dispatch = useContext(BasketUpdaterContext);
@@ -15,7 +15,7 @@ function page() {
     <>
       <Forsidetickets titel="Ticket Details" ptext="*YOU WILL HAVE THE OPTION TO ADD GREEN CAMPING TO YOUR PURCHASE  DURING CHECKOUT" />
       <div className="gridContainer">
-        <TicketSingle tickettitel="Foofest ´24" ticketname="Regular Ticket" ticketprice="799,-" buttontext="Læg i kurv" />
+        <TicketSingleReg tickettitel="Foofest ´24" ticketname="Regular Ticket" ticketprice="799,-" buttontext="Læg i kurv" />
         <Details />
       </div>
     </>

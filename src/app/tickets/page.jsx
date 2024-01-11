@@ -28,7 +28,7 @@ function Tickets() {
         <div className="card1">
           <TicketCard tickettitel="Foofest ´24" ticketname="V.I.P Ticket" ticketprice="1299,-" />
           <Link href="/TicketDetails">
-            <Button text="Buy now" onClick={() => dispatch((o) => o.concat({ id: uuidv4(), ticket: "Regular", tentPrice: 799 }))}></Button>
+            <Button text="Buy now" onClick={() => dispatch((o) => o.concat({ id: uuidv4(), ticket: "V.I.P", tentPrice: 1299 }))}></Button>
           </Link>
         </div>
         <div className="card2">
