@@ -6,7 +6,7 @@
   width: 60%;
   gap: 0.5rem;
   color: white;
-
+  margin: 0 auto;
   font-size: 20px;
 }
 .areaInput {
@@ -38,8 +38,8 @@ input[type="radio"]:focus {
   justify-content: center;
   width: 50%;
   height: 5rem;
-  margin: auto;
-  margin-top: 5%;
+  margin: 0 auto;
+  margin-top: 2%;
   font-size: 20px;
   text-transform: uppercase;
   color: white;
@@ -83,10 +83,11 @@ input[type="radio"]:focus {
 .spotdetails {
   margin-top: -20%;
   width: 60%;
+  margin: 0 auto;
 }
 .tentgrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   color: white;
   text-align: center;
@@ -113,7 +114,8 @@ input[type="radio"]:focus {
 }
 
 .tent1,
-.tent2 {
+.tent2,
+.tent3 {
   border: 2px solid rgb(255, 255, 255);
   padding: 2rem;
 }

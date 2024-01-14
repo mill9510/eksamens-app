@@ -10,8 +10,8 @@ function page() {
       <Forsidetickets titel="Ticket Details" ptext="*YOU WILL HAVE THE OPTION TO ADD GREEN CAMPING TO YOUR PURCHASE  DURING CHECKOUT" />
       <div className="gridContainer">
         <TicketSingle tickettitel="Foofest ´24" ticketname="V.I.P Ticket" ticketprice="1299,-" buttontext="Læg i kurv" />
-        <Details />
       </div>
+      <Details />
     </>
   );
 }
